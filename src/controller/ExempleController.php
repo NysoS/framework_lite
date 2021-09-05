@@ -2,6 +2,10 @@
 
 namespace src\Controller;
 
+use Model;
+
+require_once dirname(__DIR__).'/models/film.class.php';
+
 class ExempleController{
 
     private $router;
@@ -13,13 +17,23 @@ class ExempleController{
 
     public function execute(){
         /**
-        * Mapping des url avec ou sans parametre
+        * Mapping des url avec ou sans parametree
         * 1 parametre = url/{nameParam}
         * plusieur parametre = url/{param1}/{param2}/ect
         */
         $this->router->map('exemple',function($router){
-        
-            $router->render("exemple/exemple.php");
+
+           /* $film = Model::factory('Film')->create(); 
+            $film->name = "test";
+            $film->year = "2010";
+            $film->text = "le test";
+            $film->save();*/
+
+            $films = Model::factory('Film')->find_many();
+           
+            $router->render("exemple/exemple.php",[
+                "films" => $films,
+            ]);
         });
         
     }   

@@ -8,5 +8,18 @@
 </head>
 <body>
     page d'exemple
+
+    <br>
+
+    <?php 
+     
+        foreach($params['films'] as $film){
+            echo $film->name .'<br>';
+            echo $film->year .'<br>';
+            echo $film->text .'<br>';
+            echo "<hr>";
+        }
+    ?>
+
 </body>
 </html>
