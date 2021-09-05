@@ -1,0 +1,16 @@
+{
+    "name": "vendor/config",
+    "autoload": {
+        "psr-4": {
+            "router\\": "router/",
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ledoux Kristofer",
+            "email": "k.ledoux.dev@gmail.com"
+        }
+    ],
+    "require": {}
+}
